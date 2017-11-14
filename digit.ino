@@ -1,6 +1,6 @@
 #include "digit.h"
 
-static const int DIGIT_BITS[10] = {
+static const int DIGIT_BITS[16] = {
   B00111111, // 0
   B00000110, // 1
   B01011011, // 2
@@ -11,6 +11,12 @@ static const int DIGIT_BITS[10] = {
   B00000111, // 7
   B01111111, // 8
   B01101111, // 9
+  B01110111, // A
+  B01111100, // b
+  B00111001, // C
+  B01011110, // d
+  B01111001, // E
+  B01110001  // F
 };
 
 static const byte POINT_BIT = B10000000;
@@ -47,6 +53,6 @@ static byte figure_bits(byte figure) {
 // 数字を表示する
 void digitWrite(byte figure, int digit, boolean point) {
   PORTB = PORTB & FIGURE_MASK_BITS | figure_bits(figure);
-  PORTD = DIGIT_BITS[digit % 10] | (point ? POINT_BIT : 0);
+  PORTD = DIGIT_BITS[digit % 16] | (point ? POINT_BIT : 0);
 }
 
