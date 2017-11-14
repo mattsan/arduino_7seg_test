@@ -56,3 +56,8 @@ void digitWrite(byte figure, int digit, boolean point) {
   PORTD = DIGIT_BITS[digit % 16] | (point ? POINT_BIT : 0);
 }
 
+// 任意のセグメントを表示する
+void digitWriteSegments(byte figure, byte segments) {
+  PORTB = PORTB & FIGURE_MASK_BITS | figure_bits(figure);
+  PORTD = segments;
+}

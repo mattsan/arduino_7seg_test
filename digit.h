@@ -27,6 +27,7 @@ static const byte FIGURE_2 = 2; // right digit
 
 void digitInit();
 void digitWrite(byte figure, int digit, boolean point);
+void digitWriteSegments(byte figure, byte segments);
 
 #endif//__DIGIT_H__
 
