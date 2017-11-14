@@ -2,7 +2,7 @@
 #include "digit.h"
 
 // 加算/減算切り替えボタンの入力ピン番号
-const int BUTTON = 10;
+const int BUTTON = 8;
 
 // ボタンの以前の状態
 int prev_button_state = LOW;
